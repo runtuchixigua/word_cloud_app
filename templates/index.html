@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>词云生成器</title>
+</head>
+<body>
+    <h1>上传文档生成词云</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".txt,.csv,.tsv,.doc,.docx">
+        <input type="submit" value="生成词云">
+    </form>
+
+    {% if wordcloud_image %}
+        <h3>生成的词云：</h3>
+        <img src="{{ url_for('static', filename=wordcloud_image) }}" alt="词云图像">
+    {% endif %}
+
+
+</body>
+</html>
